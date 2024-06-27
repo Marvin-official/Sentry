@@ -1,14 +1,18 @@
 import { Client, GatewayIntentBits } from "discord.js";
 import axios from "axios";
-import nsfw, { predictionType } from "nsfwjs";
+import nsfw, { NSFWJS, predictionType } from "nsfwjs";
+import tf, { Tensor3D } from "@tensorflow/tfjs-node"
 import dotenv from "dotenv";
 
 dotenv.config();
 
+let _model: NSFWJS;
+
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 
-client.on("ready", () => {
+client.on("ready", async () => {
     console.log(`Logged in as ${client.user?.tag}!`);
+    await load_model();
 });
 
 const supportedImgFormat = ['jpeg', 'png', "bmp", "gif"];
@@ -57,12 +61,15 @@ async function nsfwDetector(url: string): Promise<predictionType[]> {
         responseType: "arraybuffer",
     });
 
-    const model = await nsfw.load();
-    const image = new Uint8Array(pic.data);
-    const predictions = await model.classify(image);
+    const image = await tf.node.decodeImage(pic.data, 3);
+    const predictions = await _model.classify(image as Tensor3D);
 
     return predictions;
 
 }
+
+async function load_model() {
+    _model = await nsfw.load();
+};
 
 client.login(process.env.TOKEN);
