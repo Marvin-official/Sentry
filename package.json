@@ -1,0 +1,18 @@
+{
+  "name": "discord-nsfw-blocker",
+  "version": "1.0.0",
+  "description": "A Discord Bot that leverage AI to ban message containing NFSW images",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Etienne Quantin & ReyCorp",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "discord.js": "^14.15.3",
+    "dotenv": "^16.4.5",
+    "nsfwjs": "^4.1.0",
+    "typescript": "^5.5.2"
+  }
+}
