@@ -92,7 +92,6 @@
   },
   "include": [
     "src/**/*.ts",
-    "src/infrastructure/database/adapters"
   ],
   "exclude": [
     "src/**/*.test.ts"

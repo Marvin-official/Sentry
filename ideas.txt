@@ -1,3 +1,4 @@
 - Categorize message content with AI to enable potential filtering
 - Automatic files scanning with https://www.virustotal.com/
 - emotes and reactions black list
+- nsfw ascii arts moderation
