@@ -21,6 +21,7 @@ Welcome to the future of Discord moderation! Introducing **Sentry**, the advance
 3. **Spam Protection**
    - **Anti-Spam Measures:** Deploy advanced anti-spam measures to detect and mitigate spam attacks, keeping your server free from disruptive content.
    - **Rate Limiting:** Set rate limits to prevent users from flooding channels with messages, links, or media.
+   - **Dynamic Slowmode:** Help your moderation to keep up in high activity periods while your users enjoy faster communications.
 
 4. **AI-Assisted Content Review**
    - **Intelligent Media Moderation:** Use AI to automatically review and restrict inappropriate media content, including images, videos, and links, ensuring high accuracy.
